@@ -30,7 +30,14 @@ const scoreEl = document.getElementById('score');
 const labelEl = document.getElementById('label');
 const bar = document.getElementById('bar');
 
-navigator.mediaDevices.getUserMedia({ video: true })
+navigator.mediaDevices.getUserMedia({
+    video: {
+        facingMode: "environment"
+    }
+})
+.then(stream => {
+    video.srcObject = stream;
+});
   .then(stream => { video.srcObject = stream; })
   .catch(err => { labelEl.textContent = 'Camera error: ' + err.message; });
 
