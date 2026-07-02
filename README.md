@@ -52,7 +52,7 @@ python predict.py path/to/some_image.jpg
 If `model.pkl` doesn't exist yet, `predict.py` still works using a
 hand-tuned heuristic fallback built from the same features.
 
-## 4. (Optional) Live camera demo
+## 4.  Live camera demo
 
 ```bash
 pip install flask
