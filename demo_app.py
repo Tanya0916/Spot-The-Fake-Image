@@ -1,17 +1,3 @@
-"""
-demo_app.py
------------
-Tiny live demo: opens your webcam in the browser, grabs a frame every
-~700ms, sends it to this server, and shows the real/screen score live.
-
-Run:
-    pip install flask
-    python demo_app.py
-Then open http://localhost:5000 and allow camera access.
-
-This is a convenience wrapper around predict.score_image - the actual
-detection logic is unchanged from predict.py / features.py.
-"""
 
 import base64
 import io
@@ -33,7 +19,7 @@ def index():
 @app.route("/predict", methods=["POST"])
 def predict():
     data = request.get_json()
-    img_b64 = data["image"].split(",")[1]  # strip "data:image/jpeg;base64,"
+    img_b64 = data["image"].split(",")[1] 
     img_bytes = base64.b64decode(img_b64)
 
     with tempfile.NamedTemporaryFile(suffix=".jpg", delete=False) as f:
