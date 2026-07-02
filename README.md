@@ -1,4 +1,4 @@
-# Spot the Fake Photo
+# Spot the Fake Image
 
 Given one image, decide REAL photo vs PHOTO OF A SCREEN (a recapture).
 
